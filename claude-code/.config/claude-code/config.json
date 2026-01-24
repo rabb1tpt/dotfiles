@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "jailbreak-lanes": {
+      "command": "/home/rabb1tl0ka/loka/projects/cloudsort/jailbreak/code/mcp-server-jailbreak/venv/bin/python",
+      "args": ["-m", "src.server"],
+      "cwd": "/home/rabb1tl0ka/loka/projects/cloudsort/jailbreak/code/mcp-server-jailbreak",
+      "env": {
+        "JAILBREAK_API_URL": "http://localhost:8000",
+        "JAILBREAK_API_EMAIL": "admin@example.com",
+        "JAILBREAK_API_PASSWORD": "mysecretpassword"
+      }
+    }
+  }
+}
