@@ -25,6 +25,25 @@ Things Claude should remember about Bruno's preferences across all projects and 
 - **No magic decisions**: Always ask before making organizational decisions
 - **Always ask clarifying questions**: Don't assume. Ask for specifics before suggesting solutions.
 
+## GitHub SSH Configuration
+
+Bruno has multiple GitHub accounts configured via SSH with different host aliases.
+
+**CRITICAL**: Use the correct host alias for git operations:
+
+| Host Alias | Use For | Remote URL Format | Example |
+|------------|---------|-------------------|---------|
+| `github.com` | **Loka/work repos** | `git@github.com:org/repo.git` | `git@github.com:loka-repo/repo.git` |
+| `github-rabb1t` | **Personal Bruno repos** | `git@github-rabb1t:user/repo.git` | `git@github-rabb1t:rabb1tpt/repo.git` |
+
+**When in doubt which one to use: ASK THE USER!**
+
+**Important notes:**
+- Wrong host alias = authentication failures and commits to wrong account
+- Personal projects (dotfiles, tools, etc.) = use `github-rabb1t`
+- Work projects (Loka client work, company repos) = use `github.com`
+- SSH keys handle git operations only; repo creation/management via web UI or `gh` CLI
+
 ## Decision-Making Framework
 
 ### 1. When In Doubt, Ask
