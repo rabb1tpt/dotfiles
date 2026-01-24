@@ -107,7 +107,7 @@ I can implement this in three ways:
 Which approach do you prefer?
 ```
 
-**Key principle**: Let the user make informed decisions about quality vs speed tradeoffs. Never assume quick-and-dirty is what they want.
+**Key principle**: Let the user make informed decisions about solution tier. Never assume quick-and-dirty is what they want. BUT also never assume they want to wait for perfect - Bruno values "Speed is Power!" (Grant Cardone/Tony Robbins). Quality and speed go hand in hand: ship v1, then v1.1, v1.2... iteration over perfection. Move with urgency and obsession.
 
 ## Risk Thinking & Antifragility
 
