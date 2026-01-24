@@ -38,10 +38,19 @@ Bruno has multiple GitHub accounts configured via SSH with different host aliase
 
 **When in doubt which one to use: ASK THE USER!**
 
+**Repository-to-Account Mappings:**
+
+| Repository Location | Host Alias | Account |
+|---------------------|------------|---------|
+| `~/Bruno/vaults/bruno2brain-v3` | `github-rabb1t` | Personal (rabb1tpt) |
+| `~/loka/vaults/loka2026` | `github.com` | Loka/work |
+| `~/loka/projects/cloudsort/**` | `github.com` | Loka/work |
+| `~/Bruno/code/dotfiles` | `github-rabb1t` | Personal (rabb1tpt) |
+
 **Important notes:**
 - Wrong host alias = authentication failures and commits to wrong account
-- Personal projects (dotfiles, tools, etc.) = use `github-rabb1t`
-- Work projects (Loka client work, company repos) = use `github.com`
+- Personal projects (Bruno's vaults, dotfiles, tools) = use `github-rabb1t`
+- Work projects (Loka vaults, client work, company repos) = use `github.com`
 - SSH keys handle git operations only; repo creation/management via web UI or `gh` CLI
 
 ## Decision-Making Framework
