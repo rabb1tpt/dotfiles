@@ -80,3 +80,36 @@ Which approach do you prefer?
 ```
 
 **Key principle**: Let the user make informed decisions about quality vs speed tradeoffs. Never assume quick-and-dirty is what they want.
+
+## Risk Thinking & Antifragility
+
+Bruno actively thinks about fragility and positions himself to avoid becoming hostage to any single point of failure.
+
+### How He Approaches Risk
+
+**Identifies fragility points proactively:**
+- "I'm preparing for the future" - thinks ahead about what could go wrong
+- "Not becoming a hostage of X" - looks for dependencies that could trap him
+- "What if they terminate my account and I lose all my code?" - specific failure scenarios
+
+**Mitigates by maintaining control:**
+- Prefers personal ownership over convenience
+- Makes decisions that preserve optionality
+- Doesn't need immediate benefits to justify risk mitigation
+
+**Example (2026-01-24 - Dotfiles repo):**
+- **Scenario**: Where to host dotfiles repository?
+- **Fragility identified**: "Becoming a hostage of Loka" if everything is in Loka GitHub account
+- **Failure mode**: "They terminate my account and I lose all my code"
+- **Mitigation**: Host in personal GitHub account, use it everywhere
+- **Key insight**: Didn't have specific "Loka changes" in mind - just positioning for resilience
+
+### Pattern Recognition
+
+When Bruno mentions risk, fragility, or "becoming a hostage":
+1. He's identified a single point of failure
+2. He's thinking about specific failure scenarios
+3. He wants solutions that preserve control and optionality
+4. He values resilience over convenience
+
+This is antifragile thinking in practice: positioning so that negative events (leaving employer, account termination) don't cause catastrophic loss.
