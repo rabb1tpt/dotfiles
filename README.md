@@ -23,6 +23,10 @@ dotfiles/
 │       └── claude-code/
 │           ├── memory.md    # Global preferences and decision-making framework
 │           └── config.json  # MCP server configurations
+├── hyprland/            # Hyprland window manager configuration
+│   └── .config/
+│       └── hypr/
+│           └── hyprland.conf
 ├── README.md
 ├── .gitignore
 └── install.sh
@@ -153,6 +157,18 @@ Key preferences:
 - Decision-making framework (ask/expose/tier-selection)
 - No magic decisions, always clarify
 - Antifragile solution approach
+
+### hyprland
+
+Hyprland window manager configuration:
+- **hyprland.conf**: Main configuration file with keybindings, window rules, and visual settings
+
+Key features:
+- Arrow key window focus navigation (SUPER + arrows)
+- Window resize with +/- keys (SUPER + =/-)
+- Custom application launchers (terminal, browser, Slack, etc.)
+- Workspace management (1-10)
+- Beautiful animations and blur effects
 
 ## Resources
 
