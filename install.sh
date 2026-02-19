@@ -13,6 +13,7 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PACKAGES=(
   "claude-code"
   "hyprland"
+  "waybar"
 )
 
 # Color output
