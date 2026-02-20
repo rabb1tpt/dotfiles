@@ -20,11 +20,13 @@
 
     "hyprland/window": {
         "max-length": 50,
-        "separate-outputs": true
+        "separate-outputs": true,
+        "format": "// {}"
     },
 
     "clock": {
-        "format": "{:%a %b %d  %H:%M}",
+        "format": ">_ {:%H:%M:%S}",
+        "interval": 1,
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
 
@@ -72,7 +74,7 @@
 
     "pulseaudio": {
         "format": "{icon} {volume}%",
-        "format-muted": "\uf026 Muted",
+        "format-muted": "\uf026 --",
         "format-icons": {
             "headphone": "\uf025",
             "hands-free": "\uf025",

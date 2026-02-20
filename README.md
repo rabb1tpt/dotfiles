@@ -27,6 +27,16 @@ dotfiles/
 │   └── .config/
 │       └── hypr/
 │           └── hyprland.conf
+├── waybar/              # Waybar status bar configuration
+│   └── .config/
+│       └── waybar/
+│           ├── config              # Default theme (JSON)
+│           ├── config.matrix       # Matrix theme (JSON)
+│           ├── style.css           # Default theme styles
+│           ├── style.matrix.css    # Matrix theme styles
+│           └── scripts/
+│               ├── bluetooth-toggle.sh
+│               └── switch-theme.sh
 ├── README.md
 ├── .gitignore
 └── install.sh
@@ -169,6 +179,39 @@ Key features:
 - Custom application launchers (terminal, browser, Slack, etc.)
 - Workspace management (1-10)
 - Beautiful animations and blur effects
+
+### waybar
+
+Waybar status bar configuration with multi-theme support:
+
+- **config** / **style.css**: Default theme — dark background (`#1a1b26`), blue/purple accent palette
+- **config.matrix** / **style.matrix.css**: Matrix theme — near-black background, full green palette
+  - Background: `rgba(0,5,2,0.92)`
+  - Active/highlight: `#00FF41` (classic Matrix green)
+  - Standard text: `#008F11` · CPU: `#39FF14` · Memory: `#00CC44` · Audio: `#7FFF00`
+  - Battery warning: `#CCFF00` · Critical/disconnected: `#FF0000`
+  - Clock shows seconds (`>_ HH:MM:SS`), window titles prefixed with `// `
+- **scripts/switch-theme.sh**: Switches between themes, updates symlinks, restarts waybar
+
+#### Switching themes
+
+```bash
+# Interactive picker (requires fzf)
+~/.config/waybar/scripts/switch-theme.sh
+
+# Direct switch
+~/.config/waybar/scripts/switch-theme.sh matrix
+~/.config/waybar/scripts/switch-theme.sh default
+```
+
+#### Adding a new theme
+
+1. Add `config.<name>` and `style.<name>.css` to `waybar/.config/waybar/`
+2. Register it in the `THEMES` map inside `switch-theme.sh`:
+   ```bash
+   ["mytheme"]="config.mytheme|style.mytheme.css"
+   ```
+3. Switch to it with `switch-theme.sh mytheme`
 
 ## Resources
 
