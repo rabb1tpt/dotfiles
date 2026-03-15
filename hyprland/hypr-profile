@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -e
+
+PROFILE="$1"
+PROFILES_DIR="$HOME/.config/hypr/profiles"
+LINK="$HOME/.config/hypr/monitor-profile.conf"
+
+case "$PROFILE" in
+  home|cowork)
+    ln -sf "$PROFILES_DIR/$PROFILE.conf" "$LINK"
+    hyprctl reload
+    echo "hypr-profile: switched to '$PROFILE'"
+    ;;
+  current)
+    if [[ -L "$LINK" ]]; then
+      readlink "$LINK" | xargs basename | sed 's/\.conf//'
+    else
+      echo "no symlink set at $LINK"
+    fi
+    ;;
+  *)
+    echo "Usage: hypr-profile [home|cowork|current]"
+    exit 1
+    ;;
+esac
