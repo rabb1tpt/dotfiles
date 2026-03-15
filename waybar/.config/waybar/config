@@ -14,7 +14,8 @@
         "sort-by-number": true,
         "persistent-workspaces": {
             "eDP-1": [1, 2, 3, 4, 5],
-            "DP-6": [6, 7, 8, 9, 10]
+            "DP-6": [6, 7, 8, 9, 10],
+            "DP-7": [6, 7, 8, 9, 10]
         }
     },
 
@@ -29,7 +30,7 @@
     },
 
     "cpu": {
-        "format": "\uf2db {usage}%",
+        "format": "\uf4bc {usage}%",
         "tooltip": true
     },
 
@@ -47,12 +48,13 @@
         "format-charging": "\uf0e7 {capacity}%",
         "format-plugged": "\uf1e6 {capacity}%",
         "format-alt": "{icon} {time}",
-        "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"]
+        "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
+        "on-click": "~/.config/waybar/scripts/power-profile.sh"
     },
 
     "network": {
         "format-wifi": "\uf1eb {essid} ({signalStrength}%)",
-        "format-ethernet": "\uf6ff {ipaddr}",
+        "format-ethernet": "󰒍 {ipaddr}",
         "format-disconnected": "\uf071 Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}/{cidr}\nGateway: {gwaddr}",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)\n\uf1eb {frequency}MHz\nIP: {ipaddr}/{cidr}\nGateway: {gwaddr}",

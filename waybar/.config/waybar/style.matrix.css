@@ -17,7 +17,7 @@
 }
 
 window#waybar {
-    background-color: rgba(0, 5, 2, 0.92);
+    background-color: rgba(0, 5, 2, 0.95);
     color: #008F11;
     transition-property: background-color;
     transition-duration: .5s;

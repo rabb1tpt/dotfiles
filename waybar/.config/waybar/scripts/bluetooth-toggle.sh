@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Ensure bluetooth is powered on before launching GUI
-bluetoothctl power on
+timeout 3 bluetoothctl power on
 
 # Launch the bluetooth GUI
-bt-connect-gui
+/home/rabb1tl0ka/.local/bin/bt-connect-gui
