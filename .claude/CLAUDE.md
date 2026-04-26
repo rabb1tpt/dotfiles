@@ -2,49 +2,33 @@
 
 These instructions apply to all projects unless overridden by project-specific CLAUDE.md files.
 
-## Working Principles: Antifragile by Design
+## Development Methodology
 
-**Test everything. Benefit from mistakes.**
+The same loop applies whether fixing a bug or building something new. The starting point differs; the loop doesn't.
 
-Bruno follows the Antifragile concept: mistakes and errors must make our workflow stronger and the only way to benefit from those mistakes and errors is to learn 1) why they happened (root cause); 2) fix them (root cause fix); and 3) document what we learned so we avoid similar mistakes or errors in the future. 
+**For new features:** start by defining what "done" looks like, then build toward it.  
+**For bug fixes:** start by reproducing the bug — that *is* your first test. It should fail, proving the bug exists.
 
-An important part of improving from mistakes/errors is through testing. Therefore every task MUST include validation tests.
+### The loop
 
-**Ambiguity as Fragility:** Ambiguity is a source of fragility in any system. When something has multiple valid interpretations, it creates hidden brittleness—wrong assumptions compound silently until they break. The way to avoid ambiguity is NOT to make assumptions but to ask questions that clear the ambiguity out of the task at hand. This means that whenever in doubt, do NOT assume - ASK the user questions!
+1. **Plan** — before writing any code, lay out the steps required to reach the goal and get explicit approval. A bullet list is enough. No surprises.
 
+2. **Test each step as you go**
+   - After each significant step, run the smallest test that confirms it worked
+   - What files should exist? → `ls`, `find`
+   - What should be in them? → `grep`, `Read`
+   - What commands should work? → run them
+   - What behavior should change? → test before and after
 
-### Testing Protocol
+3. **When a test fails**
+   - 3.1 Find what's wrong in the code, fix it, run the test again
+   - 3.2 If the test keeps failing after genuine attempts to fix the code — question the test itself. A test that can't pass might just be a broken test.
 
-1. **Before starting**: Understand the task clearly
-   - If you detect any ambiguity, ask clarifying questions rather than making assumptions. When requirements are unambiguous, proceed with confidence.
-   - Define what "done" looks like - what should exist, what should work
+4. **E2E at the end** — once every step passes, test the full thing end-to-end. Individual steps working is not the same as the goal being achieved.
 
-2. **Create minimal tests**: Design the smallest set of tests that validate success
-   - What files should exist? → Test with `ls`, `find`, or `Glob`
-   - What should be in those files? → Test with `Read`, `grep`, or `Grep`
-   - What commands should work? → Test by running them
-   - What behavior should change? → Test before and after states
+**Antifragile principle:** every failure is information. When something breaks, find the root cause, fix it there, and update memory or CLAUDE.md so the same mistake doesn't happen twice.
 
-3. **Test throughout, not just at the end**:
-   - Test after each significant step
-   - Catch problems early when they're cheap to fix
-   - Don't assume - verify
-
-4. **When tests fail**: This is good! We learn and improve
-   - Document what went wrong
-   - Update memory/CLAUDE.md with lessons learned
-   - Create better tests for similar tasks in the future
-
-### Examples
-
-**Bad**: "I created the config files" ✗
-**Good**: "I created the config files" → `ls -la ~/.config/app/` to verify ✓
-
-**Bad**: "I updated the function" ✗
-**Good**: "I updated the function" → `grep "function_name" file.py` to verify ✓
-
-**Bad**: Complete entire multi-step task, then discover Step 2 failed ✗
-**Good**: Test after each step, catch Step 2 failure immediately ✓
+**Ambiguity is fragility:** multiple valid interpretations create hidden brittleness. When in doubt — don't assume, ask.
 
 ## General Working Style
 
@@ -84,23 +68,6 @@ For each solution, always include:
 
 Use simple, direct language. Go straight to the point.
 
-## When You Know the Answer
-
-**Listening is about understanding BARRIERS to doing it right.**
-
-When you already know the correct approach (because it's objectively right, not opinion), listening isn't about:
-- Validating wrong approaches as if they might be correct
-- Being open to being proven wrong
-- Asking someone to explain their incorrect mental model
-
-Listening IS about:
-- Understanding what barriers prevent them from doing it right
-- Identifying gaps: knowledge? tools? time? clarity of expectations?
-- Co-creating solutions to remove those barriers
-
-**Example:**
-- ❌ "How do you think about X?" (implies their wrong approach might be valid)
-- ✅ "I noticed [observation]. Here's what I expect and why: [clarify]. What would help you do this consistently?" (state correct expectation, listen for barriers)
 
 ## Memory Management
 
@@ -146,3 +113,14 @@ Increment the `accessed` field: `accessed: N` → `accessed: N+1`
 ### Promotion (handled automatically by GC daily at 8am):
 - expired + accessed ≥ 3 → content appended to `MEMORY.md`, file deleted
 - expired + accessed < 3 → file deleted
+
+## Analysis & Investigation
+
+**Report what the evidence shows — not what seems expected.**
+
+When doing any investigation or root cause analysis:
+- Present findings based on what the data actually shows. Don't construct a narrative to fit the expected answer.
+- Separate facts from hypotheses explicitly. Label hypotheses as hypotheses.
+- List all assumptions you're making, labeled clearly as assumptions.
+- State "I don't know" when you don't know — that's always better than a confident-sounding guess.
+- When multiple options exist and you don't have enough information to choose, **ask Bruno which path to take before proceeding**. Don't pick one and run.
