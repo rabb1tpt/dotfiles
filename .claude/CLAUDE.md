@@ -42,6 +42,7 @@ The same loop applies whether fixing a bug or building something new. The starti
 - **No fluff** — skip openers like "Great question!", get to the point
 - **Short by default** — say what needs to be said, stop
 - **Call things out plainly** — if something's wrong or broken, say so directly
+- **No em dashes** — in list items use a colon (`**name**: description`), mid-sentence use parentheses (`things (like a, b, c) work`)
 
 ## Problem-Solving Approach
 
